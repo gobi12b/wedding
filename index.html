@@ -452,6 +452,81 @@ footer{
 .reveal-left.visible{opacity:1;transform:translateX(0);}
 .reveal-right{opacity:0;transform:translateX(40px);transition:opacity 0.8s ease, transform 0.8s cubic-bezier(.16,1,.3,1);}
 .reveal-right.visible{opacity:1;transform:translateX(0);}
+
+/* ═══ CONTACT ═══ */
+.contact-section{background:var(--deep2);}
+.contact-section .section-title{color:#fff;}
+.contact-grid{
+  display:grid;grid-template-columns:1fr auto 1fr;
+  gap:2rem;max-width:680px;margin:0 auto;align-items:start;
+}
+@media(max-width:560px){
+  .contact-grid{grid-template-columns:1fr;}
+  .contact-divider{display:none;}
+}
+.contact-col{text-align:center;}
+.contact-side-label{
+  font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.42em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem;
+}
+.contact-row{
+  padding:0.55rem 0;border-bottom:1px solid rgba(232,96,138,0.1);
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+}
+.contact-row:last-child{border-bottom:none;}
+.contact-ph-name{
+  font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;
+  color:rgba(244,160,188,0.5);
+}
+.contact-number{
+  font-family:'Cormorant Garamond',serif;font-size:0.95rem;
+  color:rgba(255,255,255,0.65);text-decoration:none;letter-spacing:0.04em;
+  transition:color 0.2s ease;
+}
+.contact-number:hover{color:var(--gold);}
+.contact-divider{
+  display:flex;flex-direction:column;align-items:center;
+  gap:0.5rem;color:rgba(232,96,138,0.35);font-size:0.9rem;padding-top:2rem;
+}
+.contact-div-line{
+  width:1px;height:90px;
+  background:linear-gradient(to bottom,rgba(232,96,138,0.3),transparent);
+}
+
+.name-block{display:flex;flex-direction:column;align-items:center;}
+.name-with-handle{
+  display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap;justify-content:center;
+}
+.insta-handle{
+  font-family:'Cinzel',serif;
+  font-size:clamp(0.52rem,1.1vw,0.68rem);
+  letter-spacing:0.18em;
+  color:rgba(244,160,188,0.8);
+  text-decoration:none;
+  border:1px solid rgba(244,160,188,0.28);
+  padding:0.3rem 0.8rem;
+  border-radius:20px;
+  opacity:0;
+  animation:fadeUp 1s 1.6s ease forwards;
+  transition:color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  white-space:nowrap;
+  background:rgba(232,96,138,0.07);
+}
+.insta-handle:hover{
+  color:#fff;
+  border-color:rgba(232,96,138,0.75);
+  background:rgba(232,96,138,0.2);
+}
+.footer-insta{
+  display:flex;align-items:center;justify-content:center;
+  gap:1rem;flex-wrap:wrap;margin:0.8rem 0;
+}
+.footer-insta .insta-handle{
+  opacity:1;animation:none;
+  color:rgba(244,160,188,0.7);
+  border-color:rgba(244,160,188,0.2);
+}
+.footer-insta-sep{color:rgba(232,96,138,0.3);font-size:1rem;}
 </style>
 </head>
 <body>
@@ -475,12 +550,12 @@ footer{
   <div class="hero-content">
     <span class="tagline">Together Forever · A Wedding Celebration</span>
     <div class="names-wrapper">
-      <div>
+      <div class="name-block">
         <span class="name name-1">Gobinath</span>
         <div class="name-underline"></div>
       </div>
       <span class="ampersand">&amp;</span>
-      <div>
+      <div class="name-block">
         <span class="name name-2">Pavithra</span>
         <div class="name-underline" style="animation-delay:1.7s"></div>
       </div>
@@ -501,11 +576,6 @@ footer{
   <span class="section-label">Counting Down To</span>
   <h2 class="section-title">The Celebrations</h2>
   <div class="gold-rule"></div>
-
-  <div class="countdown-tabs">
-    <button class="cd-tab active" onclick="setTarget('reception',this)">🥂 Reception</button>
-    <button class="cd-tab" onclick="setTarget('wedding',this)">🪬 Wedding</button>
-  </div>
 
   <div class="countdown-grid">
     <div class="countdown-item reveal">
@@ -528,7 +598,7 @@ footer{
       <span class="countdown-label">Seconds</span>
     </div>
   </div>
-  <p class="cd-event-label" id="cd-event-label">Reception — Saturday, May 17 · 6:00 PM onwards</p>
+  <p class="cd-event-label" id="cd-event-label">Wedding Muhurtham — Monday, May 18 · 6:00 AM – 7:00 AM</p>
 </section>
 
 <!-- ══════════ TIMELINE ══════════ -->
@@ -544,30 +614,30 @@ footer{
       <div class="tl-content reveal-left">
         <span class="tl-badge">Day 1</span>
         <h3 class="tl-title">Reception</h3>
-        <p class="tl-time">Saturday, May 17, 2026 · 6:00 PM onwards</p>
+        <p class="tl-time">Sunday, May 17, 2026 · 6:00 PM onwards</p>
         <p class="tl-desc">Join us for an elegant evening of celebration, music, and joy as we welcome you to bless the couple.</p>
+      </div>
+    </div>
+
+    <!-- Reception Dinner -->
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content reveal-right">
+        <span class="tl-badge">Day 1</span>
+        <h3 class="tl-title">Reception Dinner</h3>
+        <p class="tl-time">Sunday, May 17 · Following the Reception · 7:00 PM</p>
+        <p class="tl-desc">Savour a traditional South Indian dinner with family and friends to close the evening in celebration.</p>
       </div>
     </div>
 
     <!-- Wedding -->
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <div class="tl-content reveal-right">
-        <span class="tl-badge">Day 2</span>
-        <h3 class="tl-title">Wedding Ceremony</h3>
-        <p class="tl-time">Sunday, May 18, 2026 · 6:00 AM – 7:00 AM</p>
-        <p class="tl-desc">The sacred Muhurtham as the sun rises — a divine moment as Gobinath and Pavithra are united for eternity.</p>
-      </div>
-    </div>
-
-    <!-- Feast -->
-    <div class="tl-item">
-      <div class="tl-dot"></div>
       <div class="tl-content reveal-left">
         <span class="tl-badge">Day 2</span>
-        <h3 class="tl-title">Grand Feast</h3>
-        <p class="tl-time">Sunday, May 18 · Post Ceremony</p>
-        <p class="tl-desc">Savour a traditional South Indian feast with family and friends following the ceremony.</p>
+        <h3 class="tl-title">Wedding Ceremony</h3>
+        <p class="tl-time">Monday, May 18, 2026 · 6:00 AM – 7:00 AM</p>
+        <p class="tl-desc">The sacred Muhurtham as the sun rises — a divine moment as Gobinath and Pavithra are united for eternity.</p>
       </div>
     </div>
   </div>
@@ -598,7 +668,7 @@ footer{
       </span>
       <span class="card-label">Reception</span>
       <span class="card-main">May 17, 2026</span>
-      <span class="card-sub">Saturday · 6:00 PM onwards</span>
+      <span class="card-sub">Sunday · 6:00 PM onwards</span>
     </div>
 
     <div class="detail-card reveal" style="transition-delay:0.1s">
@@ -633,7 +703,7 @@ footer{
       </span>
       <span class="card-label">Wedding Muhurtham</span>
       <span class="card-main">May 18, 2026</span>
-      <span class="card-sub">Sunday · 6:00 AM – 7:00 AM</span>
+      <span class="card-sub">Monday · 6:00 AM – 7:00 AM</span>
     </div>
 
     <div class="detail-card reveal" style="transition-delay:0.2s">
@@ -663,7 +733,6 @@ footer{
   <div class="venue-box reveal">
     <h3 class="venue-name">Maharaja Mahal</h3>
     <p class="venue-address">
-      Maharaja Mahal Marriage Hall<br>
       Sathyamangalam, Erode District<br>
       Tamil Nadu, India
     </p>
@@ -757,10 +826,68 @@ footer{
   </div>
 </section>
 
+<!-- ══════════ CONTACT ══════════ -->
+<section class="contact-section">
+  <span class="section-label">Get in Touch</span>
+  <h2 class="section-title">Contact Us</h2>
+  <div class="gold-rule"></div>
+  <div class="contact-grid">
+
+    <div class="contact-col reveal-left">
+      <span class="contact-side-label">Groom's Side</span>
+      <div class="contact-row">
+        <span class="contact-ph-name">Name Placeholder</span>
+        <a href="tel:+910000000000" class="contact-number">+91 00000 00000</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-ph-name">Name Placeholder</span>
+        <a href="tel:+910000000000" class="contact-number">+91 00000 00000</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-ph-name">Name Placeholder</span>
+        <a href="tel:+910000000000" class="contact-number">+91 00000 00000</a>
+      </div>
+    </div>
+
+    <div class="contact-divider">
+      <span>✦</span>
+      <span class="contact-div-line"></span>
+      <span>✦</span>
+    </div>
+
+    <div class="contact-col reveal-right">
+      <span class="contact-side-label">Bride's Side</span>
+      <div class="contact-row">
+        <span class="contact-ph-name">Name Placeholder</span>
+        <a href="tel:+910000000000" class="contact-number">+91 00000 00000</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-ph-name">Name Placeholder</span>
+        <a href="tel:+910000000000" class="contact-number">+91 00000 00000</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-ph-name">Name Placeholder</span>
+        <a href="tel:+910000000000" class="contact-number">+91 00000 00000</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ══════════ FOOTER ══════════ -->
 <footer>
   <p class="footer-names">Gobinath &amp; Pavithra</p>
   <p class="footer-sep">✦</p>
+  <div class="footer-insta">
+    <a href="https://instagram.com/gobi.insta" target="_blank" class="insta-handle">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="vertical-align:middle;margin-right:4px"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@gobi.insta
+    </a>
+    <span class="footer-insta-sep">·</span>
+    <a href="https://instagram.com/pavithrapavi.k" target="_blank" class="insta-handle">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="vertical-align:middle;margin-right:4px"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@pavithrapavi.k
+    </a>
+  </div>
+  <p class="footer-sep" style="margin-top:1rem">✦</p>
   <p class="footer-sub">May 17–18, 2026 &nbsp;·&nbsp; Maharaja Mahal, Sathyamangalam</p>
 </footer>
 
@@ -823,24 +950,7 @@ function animate(){
 animate();
 
 /* ── Countdown ── */
-const targets = {
-  reception: new Date('2026-05-17T18:00:00'),
-  wedding:   new Date('2026-05-18T06:00:00'),
-};
-let currentTarget = 'reception';
-let countInterval = null;
-
-function setTarget(key, btn){
-  currentTarget = key;
-  document.querySelectorAll('.cd-tab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('cd-event-label').textContent =
-    key==='reception'
-      ? 'Reception — Saturday, May 17 · 6:00 PM onwards'
-      : 'Wedding Muhurtham — Sunday, May 18 · 6:00 AM – 7:00 AM';
-  prevVals={d:'',h:'',m:'',s:''};
-  tick();
-}
+const weddingTarget = new Date('2026-05-18T06:00:00');
 
 function bump(id){
   const el=document.getElementById(id);
@@ -853,10 +963,9 @@ function bump(id){
 let prevVals={d:'',h:'',m:'',s:''};
 function tick(){
   const now = new Date();
-  const diff = targets[currentTarget] - now;
+  const diff = weddingTarget - now;
   if(diff<=0){
-    // Show time elapsed since the event
-    const elapsed = now - targets[currentTarget];
+    const elapsed = now - weddingTarget;
     const d=String(Math.floor(elapsed/86400000)).padStart(2,'0');
     const h=String(Math.floor((elapsed%86400000)/3600000)).padStart(2,'0');
     const m=String(Math.floor((elapsed%3600000)/60000)).padStart(2,'0');
@@ -865,8 +974,7 @@ function tick(){
     document.getElementById('cd-hours').textContent=h;
     document.getElementById('cd-mins').textContent=m;
     document.getElementById('cd-secs').textContent=s;
-    const label = currentTarget==='reception' ? 'Reception' : 'Wedding';
-    document.getElementById('cd-event-label').textContent = `🎉 ${label} celebrated! ${d}d ${h}h ${m}m ago`;
+    document.getElementById('cd-event-label').textContent=`🎉 We are married! ${d}d ${h}h ${m}m ago`;
     return;
   }
   const d=String(Math.floor(diff/86400000)).padStart(2,'0');
